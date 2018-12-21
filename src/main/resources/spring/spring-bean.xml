@@ -16,10 +16,10 @@
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <!-- 配置url,driver,username,password-->
-        <property name="url" value="${jdbc.url}"></property>
-        <property name="driverClassName" value="${jdbc.driverClassName}"></property>
-        <property name="username" value="${jdbc.username}"></property>
-        <property name="password" value="${jdbc.password}"></property>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/ssm"></property>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="root"></property>
         <!-- 配置初始化大小、最小、最大 -->
         <property name="initialSize" value="1"></property>
         <property name="minIdle" value="1"></property>
@@ -42,15 +42,29 @@
         <!-- 验证连接有效与否的SQL，不同的数据配置不同 -->
         <property name="validationQuery" value="select 1"></property>
         <property name="filters" value="stat"></property>
-        <property name="proxyFilters">
+       <!-- <property name="proxyFilters">
             <list>
                 <ref bean="logFilter"></ref>
             </list>
-        </property>
+        </property>-->
     </bean>
 
-    <bean id="logFilter" class="com.alibaba.druid.filter.logging.Slf4jLogFilter">
-        <property name="statementExecutableSqlLogEnable" value="false" />
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSession">
+        <property name="dataSource" ref="dataSource"></property>
+
+        <property name="typeAliasesPackage" value="ssm.mapper"></property>
+
+        <property name="mapperLocations" value="classpath:ssm/mapper/*.xml"></property>
     </bean>
-    
+
+    <!--mapper 扫描包-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSession"></property>
+        <property name="basePackage" value="ssm.mapper"></property>
+    </bean>
+
+    <context:component-scan base-package="ssm"/>
+    <!--<bean id="logFilter" class="com.alibaba.druid.filter.logging.Slf4jLogFilter">
+        <property name="statementExecutableSqlLogEnable" value="false" />
+    </bean>-->
 </beans>

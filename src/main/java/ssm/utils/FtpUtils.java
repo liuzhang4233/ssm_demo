@@ -3,17 +3,17 @@ package ssm.utils;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 import java.io.*;
 import java.net.MalformedURLException;
+import java.util.Properties;
 
 /**
  * Created by liu_zhang on 2018/12/21.
  */
     public class FtpUtils {
 
-        PropertyPlaceholderConfigurer p = new PropertyPlaceholderConfigurer();
+        Properties p = new Properties();
         //ftp服务器地址
         public String hostname = "127.0.0.1";
         //ftp服务器端口号默认为21
@@ -32,6 +32,8 @@ import java.net.MalformedURLException;
             ftpClient = new FTPClient();
             ftpClient.setControlEncoding("utf-8");
             try {
+                p.load(new FileInputStream(""));
+
                 System.out.println("connecting...ftp服务器:"+this.hostname+":"+this.port);
                 ftpClient.connect(hostname, port); //连接ftp服务器
                 ftpClient.login(username, password); //登录ftp服务器
