@@ -20,7 +20,7 @@
     </script>
 </head>
 <body>
-<form action="login" method="post" enctype="multipart/form-data">
+<form action="login" method="get" enctype="multipart/form-data">
     <input type="text" id="uName" name="uName"><br>
     <input type="text" id="uPwd" name="uPwd"><br>
     <%--<input type="button" value="登陆" onclick="over()"><br>--%>
