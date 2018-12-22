@@ -9,17 +9,17 @@
     <bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>mybatis/db.properties</value>
+                <value>classpath:mybatis/db.properties</value>
             </list>
         </property>
     </bean>
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <!-- 配置url,driver,username,password-->
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/ssm"></property>
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-        <property name="username" value="root"></property>
-        <property name="password" value="root"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>-->
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
         <!-- 配置初始化大小、最小、最大 -->
         <property name="initialSize" value="1"></property>
         <property name="minIdle" value="1"></property>
@@ -54,6 +54,7 @@
 
         <property name="typeAliasesPackage" value="ssm.mapper"></property>
 
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
         <property name="mapperLocations" value="classpath:ssm/mapper/*.xml"></property>
     </bean>
 

@@ -22,5 +22,5 @@ public interface BookDao {
 
     void update(Book book);
 
-    Book getBookById(String title);
+    Book getBookById(Book book);
 }

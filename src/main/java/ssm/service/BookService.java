@@ -56,9 +56,9 @@ public class BookService {
     public int update(Book entity) {
         return bookDao.update(entity);
     }*/
-    public Book getBook(String title) {
-        System.out.println(bookDao);
-        return bookDao.getBookById(title);
+    public Book getBook(Book book) {
+//        System.out.println(bookDao);
+        return bookDao.getBookById(book);
     }
 
     public void update(Book book) {
