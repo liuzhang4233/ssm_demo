@@ -22,7 +22,9 @@
                type : "post",
                date : {"uname" : $("#uName1").val(), "upwd" : $("#uPwd1").val()},
                success: function(date) {
-                alert(date)
+//                alert(date)
+                   alert(date.uname)
+                   alert(date.upwd)
             }
            });
         }
