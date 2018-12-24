@@ -1,5 +1,6 @@
 package ssm.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ssm.mapper.Book;
 import ssm.mapper.BookDao;
@@ -9,7 +10,7 @@ import javax.annotation.Resource;
 @Service
 public class BookService {
 
-    @Resource
+    @Autowired
     BookDao bookDao;
 
     /*public List<Book> getAllBooks() {

@@ -1,7 +1,5 @@
 package ssm.dao;
 
-import ssm.po.User;
-
 import java.util.List;
 
 public interface BaseDao<T> {
