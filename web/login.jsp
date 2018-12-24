@@ -32,7 +32,7 @@
 
 </head>
 <body>
-<form action="login" method="get" enctype="multipart/form-data">
+<form action="/login" method="get" enctype="multipart/form-data">
     <input type="text" id="uName" name="uname"><br>
     <input type="text" id="uPwd" name="upwd"><br>
    <%-- <input type="button" value="登陆" onclick="aaa();">--%>

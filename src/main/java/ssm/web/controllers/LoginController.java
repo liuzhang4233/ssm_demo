@@ -2,7 +2,6 @@ package ssm.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ssm.mapper.User;
 import ssm.service.UserService;
@@ -18,7 +17,7 @@ public class LoginController {
 
 //    @RequestBody
         @RequestMapping("/login")
-        public User login(@RequestBody User u, HttpServletRequest request) {
+        public User login(User u, HttpServletRequest request) {
             System.out.println(u);
 //        System.out.println(u.showUser());
 //        System.out.println("login...");

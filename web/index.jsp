@@ -13,7 +13,7 @@
   <body>
  登陆成功！！！
 
- <form action="/user" method="get" enctype="multipart/form-data">
+ <form action="user" method="get" enctype="multipart/form-data">
      <input type="text" id="uName" name="uname"><br>
      <input type="text" id="uPwd" name="upwd"><br>
      <input type="submit" value="登陆">
