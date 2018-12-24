@@ -12,5 +12,10 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-    <mvc:default-servlet-handler/>
+    <!--<mvc:default-servlet-handler/>-->
+
+    <mvc:resources location="/" mapping="/**/*.js"/>
+    <mvc:resources location="/" mapping="/**/*.css"/>
+
+    <mvc:annotation-driven/>
 </beans>
