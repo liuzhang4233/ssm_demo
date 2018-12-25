@@ -1,22 +1,27 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Zero
-  Date: 2018/12/18
-  Time: 22:51
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
- 登陆成功！！！
 
- <form action="user" method="get" enctype="multipart/form-data">
-     <input type="text" id="uName" name="uname"><br>
-     <input type="text" id="uPwd" name="upwd"><br>
-     <input type="submit" value="登陆">
- </form>
-  </body>
+<script src="./j/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    function bbb() {
+        alert("bbb")
+       alert($("#bbb").val())
+    }
+
+    function ccc() {
+        alert("ccc")
+        alert($("#pwd").val())
+    }
+</script>
+<body>
+<h2>Hello World!</h2>
+<form action="/login" method="get">
+    <input type="text" id="name" name="name"><br>
+    <input type="text" id="pwd" name="pwd"><br>
+    <input type="text" id="bbb" name="bbb"><br>
+    <input type="submit" value="aaa">
+    <input type="button" onclick="ccc()" value="bbb">
+</form>
+
+<input type="button" onclick="bbb()" value="bbb">
+</body>
 </html>
